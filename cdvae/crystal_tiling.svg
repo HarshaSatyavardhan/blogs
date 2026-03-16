@@ -1,0 +1,99 @@
+<svg viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg"><defs>
+                <radialGradient id="carbonGrad" cx="30%" cy="30%" r="50%">
+                    <stop offset="0%" stop-color="#f0f6fc"/>
+                    <stop offset="40%" stop-color="#8b949e"/>
+                    <stop offset="100%" stop-color="#30363d"/>
+                </radialGradient>
+                <radialGradient id="basisGrad" cx="30%" cy="30%" r="50%">
+                    <stop offset="0%" stop-color="#c9d1d9"/>
+                    <stop offset="60%" stop-color="#484f58"/>
+                    <stop offset="100%" stop-color="#161b22"/>
+                </radialGradient>
+            </defs><style>
+                /* MASTER LOOP: 12s total duration */
+
+                /* PHASE 1: BASIS (0% - 25%) */
+                @keyframes highlightBasis {
+                    0%, 20% { fill: #f0f6fc; filter: drop-shadow(0 0 3px rgba(240,246,252,0.8)); }
+                    25%, 100% { fill: #484f58; filter: none; }
+                }
+                @keyframes atomPop {
+                    0% { opacity: 0; transform: scale(0); }
+                    5%, 92% { opacity: 1; transform: scale(1); }
+                    100% { opacity: 0; }
+                }
+
+                /* PHASE 2: LATTICE (30% - 55%) */
+                @keyframes highlightLattice {
+                    0%, 28% { opacity: 0.3; }
+                    32%, 52% { opacity: 1; filter: drop-shadow(0 0 4px currentColor); }
+                    58%, 100% { opacity: 0.3; filter: none; }
+                }
+                @keyframes axisDraw {
+                    0%, 30% { opacity: 0; stroke-dashoffset: 80; }
+                    35%, 55% { opacity: 1; stroke-dashoffset: 0; }
+                    62%, 92% { opacity: 0.25; stroke-dashoffset: 0; }
+                    100% { opacity: 0; }
+                }
+                @keyframes labelAppear {
+                    0%, 32% { opacity: 0; transform: translateY(3px); }
+                    38%, 52% { opacity: 1; transform: translateY(0); filter: drop-shadow(0 0 2px currentColor); }
+                    58%, 92% { opacity: 0.1; transform: translateY(0); filter: none; }
+                    100% { opacity: 0; }
+                }
+
+                /* PHASE 3: TILING (60% - 95%) */
+                @keyframes highlightTile {
+                    0%, 58% { fill: #484f58; }
+                    62%, 92% { fill: #f0f6fc; filter: drop-shadow(0 0 3px rgba(240,246,252,0.8)); }
+                    98%, 100% { fill: #484f58; }
+                }
+                @keyframes tilePop {
+                    0%, 60% { opacity: 0; transform: scale(0); }
+                    65%, 88% { opacity: 1; transform: scale(1); }
+                    100% { opacity: 0; }
+                }
+                @keyframes kHeaderAppear {
+                    0%, 62% { opacity: 0; }
+                    68%, 88% { opacity: 1; filter: drop-shadow(0 0 2px #7ee787); }
+                    100% { opacity: 0; }
+                }
+
+                /* ANIMATION ASSIGNMENTS */
+                .math-base { animation: highlightBasis 12s infinite ease-in-out; }
+                .math-lat { animation: highlightLattice 12s infinite ease-in-out; }
+                .math-tile { animation: highlightTile 12s infinite ease-in-out; }
+                
+                .c-l1 { fill: #ff7b72; color: #ff7b72; }
+                .c-l2 { fill: #7ee787; color: #7ee787; }
+                .c-l3 { fill: #79c0ff; color: #79c0ff; }
+
+                .axis { fill: none; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 80; animation: axisDraw 12s infinite ease-in-out; }
+                .axis-l1 { stroke: #ff7b72; } .axis-l2 { stroke: #7ee787; } .axis-l3 { stroke: #79c0ff; }
+                
+                .v-label { font-family: 'Segoe UI', sans-serif; font-weight: 800; font-size: 16px; animation: labelAppear 12s infinite ease-in-out; }
+                
+                .anim-group { transform-box: fill-box; transform-origin: center; }
+                .base-atoms { animation: atomPop 12s infinite cubic-bezier(0.34, 1.56, 0.64, 1); }
+                .tiled-cell { animation: tilePop 12s infinite cubic-bezier(0.34, 1.56, 0.64, 1); }
+                
+                .lattice-line { stroke: #30363d; stroke-width: 0.7; fill: none; stroke-opacity: 0.5; }
+                .base-cell-marker .lattice-line { stroke: #f0f6fc; stroke-width: 1.5; stroke-opacity: 0.8; }
+                .atom { stroke: rgba(0,0,0,0.3); stroke-width: 0.5; }
+                
+                .math-text { font-family: 'Times New Roman', serif; font-size: 20px; fill: #484f58; }
+                .coord-label { font-family: monospace; font-size: 9px; fill: #f0f6fc; font-weight: bold; }
+                .k-header { font-family: 'Segoe UI', sans-serif; font-size: 11px; fill: #7ee787; font-weight: bold; animation: kHeaderAppear 12s infinite; }
+            </style><rect width="500" height="580" fill="#010409"/><text x="250" y="50" text-anchor="middle" class="math-text">
+                <tspan>{</tspan>
+                <tspan class="math-base">(aᵢ, x'ᵢ)</tspan>
+                <tspan> | </tspan>
+                <tspan class="math-base">x'ᵢ = xᵢ</tspan>
+                <tspan> + </tspan>
+                <tspan class="math-tile">k₁</tspan><tspan class="math-lat c-l1">l₁</tspan>
+                <tspan> + </tspan>
+                <tspan class="math-tile">k₂</tspan><tspan class="math-lat c-l2">l₂</tspan>
+                <tspan> + </tspan>
+                <tspan class="math-tile">k₃</tspan><tspan class="math-lat c-l3">l₃</tspan>
+                <tspan>, kⱼ ∈ ℤ}</tspan>
+            </text><g transform="translate(230, 380)"><path d="M 0 0 L 55 12" class="axis axis-l1"/><text x="65" y="17" class="v-label c-l1">l₁</text><path d="M 0 0 L -48 35" class="axis axis-l2"/><text x="-73" y="50" class="v-label c-l2">l₂</text><path d="M 0 0 L 10 -62" class="axis axis-l3"/><text x="12" y="-77" class="v-label c-l3">l₃</text></g><text x="20" y="550" class="k-header">Translations (k₁, k₂, k₃)</text><g transform="translate(250, 256)"><g class="anim-group tiled-cell" style="animation-delay: 6.5s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,0,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(305, 268)"><g class="anim-group tiled-cell" style="animation-delay: 6.65s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,0,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(202, 291)"><g class="anim-group tiled-cell" style="animation-delay: 6.65s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,1,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(360, 280)"><g class="anim-group tiled-cell" style="animation-delay: 6.8s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,0,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(240, 318)"><g class="anim-group tiled-cell" style="animation-delay: 6.35s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,0,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(257, 303)"><g class="anim-group tiled-cell" style="animation-delay: 6.8s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,1,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(154, 326)"><g class="anim-group tiled-cell" style="animation-delay: 6.8s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,2,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(295, 330)"><g class="anim-group tiled-cell" style="animation-delay: 6.5s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,0,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(312, 315)"><g class="anim-group tiled-cell" style="animation-delay: 6.95s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,1,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(192, 353)"><g class="anim-group tiled-cell" style="animation-delay: 6.5s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,1,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(209, 338)"><g class="anim-group tiled-cell" style="animation-delay: 6.95s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,2,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(350, 342)"><g class="anim-group tiled-cell" style="animation-delay: 6.65s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,0,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(230, 380)" class="base-cell-marker"><g class="anim-group base-atoms"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,0,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(247, 365)"><g class="anim-group tiled-cell" style="animation-delay: 6.65s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,1,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(264, 350)"><g class="anim-group tiled-cell" style="animation-delay: 7.1s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,2,2)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(144, 388)"><g class="anim-group tiled-cell" style="animation-delay: 6.65s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,2,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(285, 392)"><g class="anim-group tiled-cell" style="animation-delay: 6.35s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,0,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(302, 377)"><g class="anim-group tiled-cell" style="animation-delay: 6.8s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,1,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(182, 415)"><g class="anim-group tiled-cell" style="animation-delay: 6.35s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,1,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(199, 400)"><g class="anim-group tiled-cell" style="animation-delay: 6.8s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,2,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(340, 404)"><g class="anim-group tiled-cell" style="animation-delay: 6.5s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,0,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(237, 427)"><g class="anim-group tiled-cell" style="animation-delay: 6.5s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,1,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(254, 412)"><g class="anim-group tiled-cell" style="animation-delay: 6.95s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,2,1)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(134, 450)"><g class="anim-group tiled-cell" style="animation-delay: 6.5s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(0,2,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(292, 439)"><g class="anim-group tiled-cell" style="animation-delay: 6.65s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,1,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(189, 462)"><g class="anim-group tiled-cell" style="animation-delay: 6.65s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(1,2,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g><g transform="translate(244, 474)"><g class="anim-group tiled-cell" style="animation-delay: 6.8s;"><path d="M 0 0 L 55 12 L 7 47 L -48 35 Z M 0 0 L 10 -62 L 65 -50 L 55 12 M 65 -50 L 17 -15 L 7 47 M -48 35 L -38 -27 L 10 -62 M -38 -27 L 17 -15" class="lattice-line"/><text x="5" y="-67" class="coord-label">(2,2,0)</text><circle cx="5.1" cy="-4.5" r="7.5" fill="url(#carbonGrad)" class="atom"/><circle cx="10.2" cy="-9" r="7.5" fill="url(#basisGrad)" class="atom"/></g></g></svg>
