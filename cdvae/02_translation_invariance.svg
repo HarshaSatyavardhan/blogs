@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" width="520" height="520">
+  <defs>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ccff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00ccff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9f1c" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ff9f1c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ballA" cx="35%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#66eaff"/>
+      <stop offset="100%" stop-color="#00aadd"/>
+    </radialGradient>
+    <radialGradient id="ballB" cx="35%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#ffcc55"/>
+      <stop offset="100%" stop-color="#dd8800"/>
+    </radialGradient>
+    <clipPath id="latticeClip">
+      <rect x="52" y="52" width="416" height="416" rx="4"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes shiftRight {
+      0%, 10% { transform: translateX(0); }
+      50% { transform: translateX(60px); }
+      60%, 90% { transform: translateX(60px); }
+      95% { transform: translateX(0); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes arrowGrow {
+      0%, 10% { transform: scaleX(0); opacity: 0; }
+      15% { transform: scaleX(0); opacity: 0.8; }
+      50% { transform: scaleX(1); opacity: 0.8; }
+      55% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes checkFade {
+      0%, 52% { opacity: 0; }
+      58%, 88% { opacity: 1; }
+      93%, 100% { opacity: 0; }
+    }
+    .shift-group { animation: shiftRight 5s ease-in-out infinite; }
+    .arrow-anim { animation: arrowGrow 5s ease-in-out infinite; transform-origin: 80px 475px; }
+    .check-fade { animation: checkFade 5s ease-in-out infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="520" height="520" fill="#080c18" rx="12"/>
+
+  <!-- Title -->
+  <text x="260" y="32" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="monospace" font-size="9" letter-spacing="3">CRYSTAL SYMMETRY</text>
+  <text x="260" y="50" text-anchor="middle" fill="#00e676" font-family="monospace" font-size="14" font-weight="bold">→ Translation Invariance</text>
+
+  <!-- Static grid lines (don't move) -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="80" y1="80" x2="80" y2="440"/><line x1="140" y1="80" x2="140" y2="440"/>
+    <line x1="200" y1="80" x2="200" y2="440"/><line x1="260" y1="80" x2="260" y2="440"/>
+    <line x1="320" y1="80" x2="320" y2="440"/><line x1="380" y1="80" x2="380" y2="440"/>
+    <line x1="440" y1="80" x2="440" y2="440"/>
+    <line x1="80" y1="80" x2="440" y2="80"/><line x1="80" y1="140" x2="440" y2="140"/>
+    <line x1="80" y1="200" x2="440" y2="200"/><line x1="80" y1="260" x2="440" y2="260"/>
+    <line x1="80" y1="320" x2="440" y2="320"/><line x1="80" y1="380" x2="440" y2="380"/>
+    <line x1="80" y1="440" x2="440" y2="440"/>
+  </g>
+
+  <!-- Sliding lattice (clipped) -->
+  <g clip-path="url(#latticeClip)">
+    <g class="shift-group">
+      <!-- Extra column at left (x=20) for wrap-around illusion -->
+      <!-- Row y=80 -->
+      <circle cx="20" cy="80" r="28" fill="url(#glowB)"/><circle cx="20" cy="80" r="9" fill="url(#ballB)"/>
+      <circle cx="20" cy="200" r="28" fill="url(#glowB)"/><circle cx="20" cy="200" r="9" fill="url(#ballB)"/>
+      <circle cx="20" cy="320" r="28" fill="url(#glowB)"/><circle cx="20" cy="320" r="9" fill="url(#ballB)"/>
+      <circle cx="20" cy="440" r="28" fill="url(#glowB)"/><circle cx="20" cy="440" r="9" fill="url(#ballB)"/>
+      <circle cx="20" cy="140" r="28" fill="url(#glowA)"/><circle cx="20" cy="140" r="13" fill="url(#ballA)"/>
+      <circle cx="20" cy="260" r="28" fill="url(#glowA)"/><circle cx="20" cy="260" r="13" fill="url(#ballA)"/>
+      <circle cx="20" cy="380" r="28" fill="url(#glowA)"/><circle cx="20" cy="380" r="13" fill="url(#ballA)"/>
+
+      <!-- Main grid atoms -->
+      <!-- Type A (cyan) -->
+      <circle cx="80" cy="80" r="28" fill="url(#glowA)"/><circle cx="80" cy="80" r="13" fill="url(#ballA)"/>
+      <circle cx="200" cy="80" r="28" fill="url(#glowA)"/><circle cx="200" cy="80" r="13" fill="url(#ballA)"/>
+      <circle cx="320" cy="80" r="28" fill="url(#glowA)"/><circle cx="320" cy="80" r="13" fill="url(#ballA)"/>
+      <circle cx="440" cy="80" r="28" fill="url(#glowA)"/><circle cx="440" cy="80" r="13" fill="url(#ballA)"/>
+      <circle cx="140" cy="140" r="28" fill="url(#glowA)"/><circle cx="140" cy="140" r="13" fill="url(#ballA)"/>
+      <circle cx="260" cy="140" r="28" fill="url(#glowA)"/><circle cx="260" cy="140" r="13" fill="url(#ballA)"/>
+      <circle cx="380" cy="140" r="28" fill="url(#glowA)"/><circle cx="380" cy="140" r="13" fill="url(#ballA)"/>
+      <circle cx="80" cy="200" r="28" fill="url(#glowA)"/><circle cx="80" cy="200" r="13" fill="url(#ballA)"/>
+      <circle cx="200" cy="200" r="28" fill="url(#glowA)"/><circle cx="200" cy="200" r="13" fill="url(#ballA)"/>
+      <circle cx="320" cy="200" r="28" fill="url(#glowA)"/><circle cx="320" cy="200" r="13" fill="url(#ballA)"/>
+      <circle cx="440" cy="200" r="28" fill="url(#glowA)"/><circle cx="440" cy="200" r="13" fill="url(#ballA)"/>
+      <circle cx="140" cy="260" r="28" fill="url(#glowA)"/><circle cx="140" cy="260" r="13" fill="url(#ballA)"/>
+      <circle cx="260" cy="260" r="28" fill="url(#glowA)"/><circle cx="260" cy="260" r="13" fill="url(#ballA)"/>
+      <circle cx="380" cy="260" r="28" fill="url(#glowA)"/><circle cx="380" cy="260" r="13" fill="url(#ballA)"/>
+      <circle cx="80" cy="320" r="28" fill="url(#glowA)"/><circle cx="80" cy="320" r="13" fill="url(#ballA)"/>
+      <circle cx="200" cy="320" r="28" fill="url(#glowA)"/><circle cx="200" cy="320" r="13" fill="url(#ballA)"/>
+      <circle cx="320" cy="320" r="28" fill="url(#glowA)"/><circle cx="320" cy="320" r="13" fill="url(#ballA)"/>
+      <circle cx="440" cy="320" r="28" fill="url(#glowA)"/><circle cx="440" cy="320" r="13" fill="url(#ballA)"/>
+      <circle cx="140" cy="380" r="28" fill="url(#glowA)"/><circle cx="140" cy="380" r="13" fill="url(#ballA)"/>
+      <circle cx="260" cy="380" r="28" fill="url(#glowA)"/><circle cx="260" cy="380" r="13" fill="url(#ballA)"/>
+      <circle cx="380" cy="380" r="28" fill="url(#glowA)"/><circle cx="380" cy="380" r="13" fill="url(#ballA)"/>
+      <circle cx="80" cy="440" r="28" fill="url(#glowA)"/><circle cx="80" cy="440" r="13" fill="url(#ballA)"/>
+      <circle cx="200" cy="440" r="28" fill="url(#glowA)"/><circle cx="200" cy="440" r="13" fill="url(#ballA)"/>
+      <circle cx="320" cy="440" r="28" fill="url(#glowA)"/><circle cx="320" cy="440" r="13" fill="url(#ballA)"/>
+      <circle cx="440" cy="440" r="28" fill="url(#glowA)"/><circle cx="440" cy="440" r="13" fill="url(#ballA)"/>
+
+      <!-- Type B (orange) -->
+      <circle cx="140" cy="80" r="22" fill="url(#glowB)"/><circle cx="140" cy="80" r="9" fill="url(#ballB)"/>
+      <circle cx="260" cy="80" r="22" fill="url(#glowB)"/><circle cx="260" cy="80" r="9" fill="url(#ballB)"/>
+      <circle cx="380" cy="80" r="22" fill="url(#glowB)"/><circle cx="380" cy="80" r="9" fill="url(#ballB)"/>
+      <circle cx="80" cy="140" r="22" fill="url(#glowB)"/><circle cx="80" cy="140" r="9" fill="url(#ballB)"/>
+      <circle cx="200" cy="140" r="22" fill="url(#glowB)"/><circle cx="200" cy="140" r="9" fill="url(#ballB)"/>
+      <circle cx="320" cy="140" r="22" fill="url(#glowB)"/><circle cx="320" cy="140" r="9" fill="url(#ballB)"/>
+      <circle cx="440" cy="140" r="22" fill="url(#glowB)"/><circle cx="440" cy="140" r="9" fill="url(#ballB)"/>
+      <circle cx="140" cy="200" r="22" fill="url(#glowB)"/><circle cx="140" cy="200" r="9" fill="url(#ballB)"/>
+      <circle cx="260" cy="200" r="22" fill="url(#glowB)"/><circle cx="260" cy="200" r="9" fill="url(#ballB)"/>
+      <circle cx="380" cy="200" r="22" fill="url(#glowB)"/><circle cx="380" cy="200" r="9" fill="url(#ballB)"/>
+      <circle cx="80" cy="260" r="22" fill="url(#glowB)"/><circle cx="80" cy="260" r="9" fill="url(#ballB)"/>
+      <circle cx="200" cy="260" r="22" fill="url(#glowB)"/><circle cx="200" cy="260" r="9" fill="url(#ballB)"/>
+      <circle cx="320" cy="260" r="22" fill="url(#glowB)"/><circle cx="320" cy="260" r="9" fill="url(#ballB)"/>
+      <circle cx="440" cy="260" r="22" fill="url(#glowB)"/><circle cx="440" cy="260" r="9" fill="url(#ballB)"/>
+      <circle cx="140" cy="320" r="22" fill="url(#glowB)"/><circle cx="140" cy="320" r="9" fill="url(#ballB)"/>
+      <circle cx="260" cy="320" r="22" fill="url(#glowB)"/><circle cx="260" cy="320" r="9" fill="url(#ballB)"/>
+      <circle cx="380" cy="320" r="22" fill="url(#glowB)"/><circle cx="380" cy="320" r="9" fill="url(#ballB)"/>
+      <circle cx="80" cy="380" r="22" fill="url(#glowB)"/><circle cx="80" cy="380" r="9" fill="url(#ballB)"/>
+      <circle cx="200" cy="380" r="22" fill="url(#glowB)"/><circle cx="200" cy="380" r="9" fill="url(#ballB)"/>
+      <circle cx="320" cy="380" r="22" fill="url(#glowB)"/><circle cx="320" cy="380" r="9" fill="url(#ballB)"/>
+      <circle cx="440" cy="380" r="22" fill="url(#glowB)"/><circle cx="440" cy="380" r="9" fill="url(#ballB)"/>
+      <circle cx="140" cy="440" r="22" fill="url(#glowB)"/><circle cx="140" cy="440" r="9" fill="url(#ballB)"/>
+      <circle cx="260" cy="440" r="22" fill="url(#glowB)"/><circle cx="260" cy="440" r="9" fill="url(#ballB)"/>
+      <circle cx="380" cy="440" r="22" fill="url(#glowB)"/><circle cx="380" cy="440" r="9" fill="url(#ballB)"/>
+    </g>
+  </g>
+
+  <!-- Translation vector arrow -->
+  <g class="arrow-anim">
+    <line x1="80" y1="475" x2="136" y2="475" stroke="#00e676" stroke-width="2.5"/>
+    <polygon points="140,475 132,470 132,480" fill="#00e676"/>
+    <text x="110" y="468" text-anchor="middle" fill="#00e676" font-family="monospace" font-size="12" font-weight="bold">T</text>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="260" y="495" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="11">Shifting by lattice vector T</text>
+  <text x="260" y="512" text-anchor="middle" fill="#00e676" font-family="monospace" font-size="11" font-weight="bold" class="check-fade">✓ Same crystal — periodic repetition</text>
+</svg>

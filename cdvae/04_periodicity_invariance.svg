@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" width="520" height="520">
+  <defs>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ccff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00ccff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9f1c" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ff9f1c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ballA" cx="35%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#66eaff"/>
+      <stop offset="100%" stop-color="#00aadd"/>
+    </radialGradient>
+    <radialGradient id="ballB" cx="35%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#ffcc55"/>
+      <stop offset="100%" stop-color="#dd8800"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    @keyframes cellAppear {
+      0%, 8% { opacity: 0; }
+      20% { opacity: 1; }
+      88% { opacity: 1; }
+      95%, 100% { opacity: 0; }
+    }
+    @keyframes cellFill {
+      0%, 8% { opacity: 0; }
+      20% { opacity: 0.08; }
+      88% { opacity: 0.08; }
+      95%, 100% { opacity: 0; }
+    }
+    @keyframes arrowsAppear {
+      0%, 15% { opacity: 0; }
+      25% { opacity: 0.7; }
+      88% { opacity: 0.7; }
+      95%, 100% { opacity: 0; }
+    }
+    @keyframes ghost1 { 0%, 30% { opacity: 0; } 40% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes ghost2 { 0%, 35% { opacity: 0; } 45% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes ghost3 { 0%, 40% { opacity: 0; } 50% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes ghost4 { 0%, 45% { opacity: 0; } 55% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes ghost5 { 0%, 50% { opacity: 0; } 60% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes ghost6 { 0%, 55% { opacity: 0; } 65% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes ghost7 { 0%, 60% { opacity: 0; } 70% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes ghost8 { 0%, 65% { opacity: 0; } 75% { opacity: 1; } 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes checkFade {
+      0%, 72% { opacity: 0; }
+      78%, 88% { opacity: 1; }
+      93%, 100% { opacity: 0; }
+    }
+    @keyframes labelAppear {
+      0%, 18% { opacity: 0; }
+      25% { opacity: 0.8; }
+      88% { opacity: 0.8; }
+      95%, 100% { opacity: 0; }
+    }
+    .cell-stroke { animation: cellAppear 6s ease-in-out infinite; }
+    .cell-fill { animation: cellFill 6s ease-in-out infinite; }
+    .arrows { animation: arrowsAppear 6s ease-in-out infinite; }
+    .g1 { animation: ghost1 6s ease-in-out infinite; }
+    .g2 { animation: ghost2 6s ease-in-out infinite; }
+    .g3 { animation: ghost3 6s ease-in-out infinite; }
+    .g4 { animation: ghost4 6s ease-in-out infinite; }
+    .g5 { animation: ghost5 6s ease-in-out infinite; }
+    .g6 { animation: ghost6 6s ease-in-out infinite; }
+    .g7 { animation: ghost7 6s ease-in-out infinite; }
+    .g8 { animation: ghost8 6s ease-in-out infinite; }
+    .check-fade { animation: checkFade 6s ease-in-out infinite; }
+    .label-appear { animation: labelAppear 6s ease-in-out infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="520" height="520" fill="#080c18" rx="12"/>
+
+  <!-- Title -->
+  <text x="260" y="32" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="monospace" font-size="9" letter-spacing="3">CRYSTAL SYMMETRY</text>
+  <text x="260" y="50" text-anchor="middle" fill="#ffd740" font-family="monospace" font-size="14" font-weight="bold">▦ Periodic Invariance</text>
+
+  <!-- Grid -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="80" y1="80" x2="80" y2="440"/><line x1="140" y1="80" x2="140" y2="440"/>
+    <line x1="200" y1="80" x2="200" y2="440"/><line x1="260" y1="80" x2="260" y2="440"/>
+    <line x1="320" y1="80" x2="320" y2="440"/><line x1="380" y1="80" x2="380" y2="440"/>
+    <line x1="440" y1="80" x2="440" y2="440"/>
+    <line x1="80" y1="80" x2="440" y2="80"/><line x1="80" y1="140" x2="440" y2="140"/>
+    <line x1="80" y1="200" x2="440" y2="200"/><line x1="80" y1="260" x2="440" y2="260"/>
+    <line x1="80" y1="320" x2="440" y2="320"/><line x1="80" y1="380" x2="440" y2="380"/>
+    <line x1="80" y1="440" x2="440" y2="440"/>
+  </g>
+
+  <!-- Bonds -->
+  <g stroke="rgba(100,140,200,0.1)" stroke-width="1.5">
+    <line x1="80" y1="80" x2="140" y2="80"/><line x1="140" y1="80" x2="200" y2="80"/><line x1="200" y1="80" x2="260" y2="80"/><line x1="260" y1="80" x2="320" y2="80"/><line x1="320" y1="80" x2="380" y2="80"/><line x1="380" y1="80" x2="440" y2="80"/>
+    <line x1="80" y1="140" x2="140" y2="140"/><line x1="140" y1="140" x2="200" y2="140"/><line x1="200" y1="140" x2="260" y2="140"/><line x1="260" y1="140" x2="320" y2="140"/><line x1="320" y1="140" x2="380" y2="140"/><line x1="380" y1="140" x2="440" y2="140"/>
+    <line x1="80" y1="200" x2="140" y2="200"/><line x1="140" y1="200" x2="200" y2="200"/><line x1="200" y1="200" x2="260" y2="200"/><line x1="260" y1="200" x2="320" y2="200"/><line x1="320" y1="200" x2="380" y2="200"/><line x1="380" y1="200" x2="440" y2="200"/>
+    <line x1="80" y1="260" x2="140" y2="260"/><line x1="140" y1="260" x2="200" y2="260"/><line x1="200" y1="260" x2="260" y2="260"/><line x1="260" y1="260" x2="320" y2="260"/><line x1="320" y1="260" x2="380" y2="260"/><line x1="380" y1="260" x2="440" y2="260"/>
+    <line x1="80" y1="320" x2="140" y2="320"/><line x1="140" y1="320" x2="200" y2="320"/><line x1="200" y1="320" x2="260" y2="320"/><line x1="260" y1="320" x2="320" y2="320"/><line x1="320" y1="320" x2="380" y2="320"/><line x1="380" y1="320" x2="440" y2="320"/>
+    <line x1="80" y1="380" x2="140" y2="380"/><line x1="140" y1="380" x2="200" y2="380"/><line x1="200" y1="380" x2="260" y2="380"/><line x1="260" y1="380" x2="320" y2="380"/><line x1="320" y1="380" x2="380" y2="380"/><line x1="380" y1="380" x2="440" y2="380"/>
+    <line x1="80" y1="440" x2="140" y2="440"/><line x1="140" y1="440" x2="200" y2="440"/><line x1="200" y1="440" x2="260" y2="440"/><line x1="260" y1="440" x2="320" y2="440"/><line x1="320" y1="440" x2="380" y2="440"/><line x1="380" y1="440" x2="440" y2="440"/>
+    <line x1="80" y1="80" x2="80" y2="140"/><line x1="80" y1="140" x2="80" y2="200"/><line x1="80" y1="200" x2="80" y2="260"/><line x1="80" y1="260" x2="80" y2="320"/><line x1="80" y1="320" x2="80" y2="380"/><line x1="80" y1="380" x2="80" y2="440"/>
+    <line x1="140" y1="80" x2="140" y2="140"/><line x1="140" y1="140" x2="140" y2="200"/><line x1="140" y1="200" x2="140" y2="260"/><line x1="140" y1="260" x2="140" y2="320"/><line x1="140" y1="320" x2="140" y2="380"/><line x1="140" y1="380" x2="140" y2="440"/>
+    <line x1="200" y1="80" x2="200" y2="140"/><line x1="200" y1="140" x2="200" y2="200"/><line x1="200" y1="200" x2="200" y2="260"/><line x1="200" y1="260" x2="200" y2="320"/><line x1="200" y1="320" x2="200" y2="380"/><line x1="200" y1="380" x2="200" y2="440"/>
+    <line x1="260" y1="80" x2="260" y2="140"/><line x1="260" y1="140" x2="260" y2="200"/><line x1="260" y1="200" x2="260" y2="260"/><line x1="260" y1="260" x2="260" y2="320"/><line x1="260" y1="320" x2="260" y2="380"/><line x1="260" y1="380" x2="260" y2="440"/>
+    <line x1="320" y1="80" x2="320" y2="140"/><line x1="320" y1="140" x2="320" y2="200"/><line x1="320" y1="200" x2="320" y2="260"/><line x1="320" y1="260" x2="320" y2="320"/><line x1="320" y1="320" x2="320" y2="380"/><line x1="320" y1="380" x2="320" y2="440"/>
+    <line x1="380" y1="80" x2="380" y2="140"/><line x1="380" y1="140" x2="380" y2="200"/><line x1="380" y1="200" x2="380" y2="260"/><line x1="380" y1="260" x2="380" y2="320"/><line x1="380" y1="320" x2="380" y2="380"/><line x1="380" y1="380" x2="380" y2="440"/>
+    <line x1="440" y1="80" x2="440" y2="140"/><line x1="440" y1="140" x2="440" y2="200"/><line x1="440" y1="200" x2="440" y2="260"/><line x1="440" y1="260" x2="440" y2="320"/><line x1="440" y1="320" x2="440" y2="380"/><line x1="440" y1="380" x2="440" y2="440"/>
+  </g>
+
+  <!-- All atoms -->
+  <g>
+    <!-- Type A -->
+    <circle cx="80" cy="80" r="28" fill="url(#glowA)"/><circle cx="80" cy="80" r="13" fill="url(#ballA)"/>
+    <circle cx="200" cy="80" r="28" fill="url(#glowA)"/><circle cx="200" cy="80" r="13" fill="url(#ballA)"/>
+    <circle cx="320" cy="80" r="28" fill="url(#glowA)"/><circle cx="320" cy="80" r="13" fill="url(#ballA)"/>
+    <circle cx="440" cy="80" r="28" fill="url(#glowA)"/><circle cx="440" cy="80" r="13" fill="url(#ballA)"/>
+    <circle cx="140" cy="140" r="28" fill="url(#glowA)"/><circle cx="140" cy="140" r="13" fill="url(#ballA)"/>
+    <circle cx="260" cy="140" r="28" fill="url(#glowA)"/><circle cx="260" cy="140" r="13" fill="url(#ballA)"/>
+    <circle cx="380" cy="140" r="28" fill="url(#glowA)"/><circle cx="380" cy="140" r="13" fill="url(#ballA)"/>
+    <circle cx="80" cy="200" r="28" fill="url(#glowA)"/><circle cx="80" cy="200" r="13" fill="url(#ballA)"/>
+    <circle cx="200" cy="200" r="28" fill="url(#glowA)"/><circle cx="200" cy="200" r="13" fill="url(#ballA)"/>
+    <circle cx="320" cy="200" r="28" fill="url(#glowA)"/><circle cx="320" cy="200" r="13" fill="url(#ballA)"/>
+    <circle cx="440" cy="200" r="28" fill="url(#glowA)"/><circle cx="440" cy="200" r="13" fill="url(#ballA)"/>
+    <circle cx="140" cy="260" r="28" fill="url(#glowA)"/><circle cx="140" cy="260" r="13" fill="url(#ballA)"/>
+    <circle cx="260" cy="260" r="28" fill="url(#glowA)"/><circle cx="260" cy="260" r="13" fill="url(#ballA)"/>
+    <circle cx="380" cy="260" r="28" fill="url(#glowA)"/><circle cx="380" cy="260" r="13" fill="url(#ballA)"/>
+    <circle cx="80" cy="320" r="28" fill="url(#glowA)"/><circle cx="80" cy="320" r="13" fill="url(#ballA)"/>
+    <circle cx="200" cy="320" r="28" fill="url(#glowA)"/><circle cx="200" cy="320" r="13" fill="url(#ballA)"/>
+    <circle cx="320" cy="320" r="28" fill="url(#glowA)"/><circle cx="320" cy="320" r="13" fill="url(#ballA)"/>
+    <circle cx="440" cy="320" r="28" fill="url(#glowA)"/><circle cx="440" cy="320" r="13" fill="url(#ballA)"/>
+    <circle cx="140" cy="380" r="28" fill="url(#glowA)"/><circle cx="140" cy="380" r="13" fill="url(#ballA)"/>
+    <circle cx="260" cy="380" r="28" fill="url(#glowA)"/><circle cx="260" cy="380" r="13" fill="url(#ballA)"/>
+    <circle cx="380" cy="380" r="28" fill="url(#glowA)"/><circle cx="380" cy="380" r="13" fill="url(#ballA)"/>
+    <circle cx="80" cy="440" r="28" fill="url(#glowA)"/><circle cx="80" cy="440" r="13" fill="url(#ballA)"/>
+    <circle cx="200" cy="440" r="28" fill="url(#glowA)"/><circle cx="200" cy="440" r="13" fill="url(#ballA)"/>
+    <circle cx="320" cy="440" r="28" fill="url(#glowA)"/><circle cx="320" cy="440" r="13" fill="url(#ballA)"/>
+    <circle cx="440" cy="440" r="28" fill="url(#glowA)"/><circle cx="440" cy="440" r="13" fill="url(#ballA)"/>
+    <!-- Type B -->
+    <circle cx="140" cy="80" r="22" fill="url(#glowB)"/><circle cx="140" cy="80" r="9" fill="url(#ballB)"/>
+    <circle cx="260" cy="80" r="22" fill="url(#glowB)"/><circle cx="260" cy="80" r="9" fill="url(#ballB)"/>
+    <circle cx="380" cy="80" r="22" fill="url(#glowB)"/><circle cx="380" cy="80" r="9" fill="url(#ballB)"/>
+    <circle cx="80" cy="140" r="22" fill="url(#glowB)"/><circle cx="80" cy="140" r="9" fill="url(#ballB)"/>
+    <circle cx="200" cy="140" r="22" fill="url(#glowB)"/><circle cx="200" cy="140" r="9" fill="url(#ballB)"/>
+    <circle cx="320" cy="140" r="22" fill="url(#glowB)"/><circle cx="320" cy="140" r="9" fill="url(#ballB)"/>
+    <circle cx="440" cy="140" r="22" fill="url(#glowB)"/><circle cx="440" cy="140" r="9" fill="url(#ballB)"/>
+    <circle cx="140" cy="200" r="22" fill="url(#glowB)"/><circle cx="140" cy="200" r="9" fill="url(#ballB)"/>
+    <circle cx="260" cy="200" r="22" fill="url(#glowB)"/><circle cx="260" cy="200" r="9" fill="url(#ballB)"/>
+    <circle cx="380" cy="200" r="22" fill="url(#glowB)"/><circle cx="380" cy="200" r="9" fill="url(#ballB)"/>
+    <circle cx="80" cy="260" r="22" fill="url(#glowB)"/><circle cx="80" cy="260" r="9" fill="url(#ballB)"/>
+    <circle cx="200" cy="260" r="22" fill="url(#glowB)"/><circle cx="200" cy="260" r="9" fill="url(#ballB)"/>
+    <circle cx="320" cy="260" r="22" fill="url(#glowB)"/><circle cx="320" cy="260" r="9" fill="url(#ballB)"/>
+    <circle cx="440" cy="260" r="22" fill="url(#glowB)"/><circle cx="440" cy="260" r="9" fill="url(#ballB)"/>
+    <circle cx="140" cy="320" r="22" fill="url(#glowB)"/><circle cx="140" cy="320" r="9" fill="url(#ballB)"/>
+    <circle cx="260" cy="320" r="22" fill="url(#glowB)"/><circle cx="260" cy="320" r="9" fill="url(#ballB)"/>
+    <circle cx="380" cy="320" r="22" fill="url(#glowB)"/><circle cx="380" cy="320" r="9" fill="url(#ballB)"/>
+    <circle cx="80" cy="380" r="22" fill="url(#glowB)"/><circle cx="80" cy="380" r="9" fill="url(#ballB)"/>
+    <circle cx="200" cy="380" r="22" fill="url(#glowB)"/><circle cx="200" cy="380" r="9" fill="url(#ballB)"/>
+    <circle cx="320" cy="380" r="22" fill="url(#glowB)"/><circle cx="320" cy="380" r="9" fill="url(#ballB)"/>
+    <circle cx="440" cy="380" r="22" fill="url(#glowB)"/><circle cx="440" cy="380" r="9" fill="url(#ballB)"/>
+    <circle cx="140" cy="440" r="22" fill="url(#glowB)"/><circle cx="140" cy="440" r="9" fill="url(#ballB)"/>
+    <circle cx="260" cy="440" r="22" fill="url(#glowB)"/><circle cx="260" cy="440" r="9" fill="url(#ballB)"/>
+    <circle cx="380" cy="440" r="22" fill="url(#glowB)"/><circle cx="380" cy="440" r="9" fill="url(#ballB)"/>
+  </g>
+
+  <!-- Primary unit cell (bottom-left) -->
+  <rect x="80" y="380" width="60" height="60" fill="#ffd740" opacity="0" class="cell-fill"/>
+  <rect x="80" y="380" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="2.5" opacity="0" class="cell-stroke"/>
+
+  <!-- Unit cell label -->
+  <text x="110" y="458" text-anchor="middle" fill="#ffd740" font-family="monospace" font-size="9" font-weight="bold" opacity="0" class="label-appear">unit cell</text>
+
+  <!-- Lattice vectors a1, a2 -->
+  <g class="arrows" opacity="0">
+    <!-- a1 (right) -->
+    <line x1="80" y1="440" x2="130" y2="440" stroke="#00ccff" stroke-width="2"/>
+    <polygon points="134,440 128,436 128,444" fill="#00ccff"/>
+    <text x="110" y="456" text-anchor="middle" fill="#00ccff" font-family="monospace" font-size="10" font-weight="bold">a₁</text>
+    <!-- a2 (up) -->
+    <line x1="80" y1="440" x2="80" y2="390" stroke="#ff9f1c" stroke-width="2"/>
+    <polygon points="80,386 76,392 84,392" fill="#ff9f1c"/>
+    <text x="68" y="415" text-anchor="middle" fill="#ff9f1c" font-family="monospace" font-size="10" font-weight="bold">a₂</text>
+  </g>
+
+  <!-- Ghost cells appearing one by one -->
+  <rect x="140" y="380" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g1"/>
+  <rect x="80" y="320" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g2"/>
+  <rect x="140" y="320" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g3"/>
+  <rect x="200" y="380" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g4"/>
+  <rect x="200" y="320" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g5"/>
+  <rect x="80" y="260" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g6"/>
+  <rect x="140" y="260" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g7"/>
+  <rect x="200" y="260" width="60" height="60" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3 3" opacity="0" class="g8"/>
+
+  <!-- Bottom text -->
+  <text x="260" y="495" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="11">Crystal = infinite tiling of unit cell</text>
+  <text x="260" y="512" text-anchor="middle" fill="#ffd740" font-family="monospace" font-size="11" font-weight="bold" class="check-fade">✓ Infinite structure from one motif</text>
+</svg>
